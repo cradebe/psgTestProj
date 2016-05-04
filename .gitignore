@@ -10,4 +10,5 @@ typings
 # Compiled files
 app/**/*.js
 app/**/*.js.map
+assets/styles/**/*.css
 assets/styles/**/*.css.map
