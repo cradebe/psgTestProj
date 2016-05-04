@@ -7,3 +7,4 @@ node_modules
 # Compiled files
 app/**/*.js
 app/**/*.js.map
+assets/styles/**/*.css.map
