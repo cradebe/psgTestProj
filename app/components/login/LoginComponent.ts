@@ -1,5 +1,6 @@
 import {Component} from '@angular/core';
 import {FORM_DIRECTIVES} from '@angular/common';
+import {Router} from '@angular/router-deprecated';
 import {AuthService} from '../../services/auth/AuthService';
 
 @Component({
@@ -10,7 +11,7 @@ import {AuthService} from '../../services/auth/AuthService';
 export class LoginComponent {
   message:string;
 
-  constructor(public authService:AuthService) {
+  constructor(public authService:AuthService, private router: Router) {
     this.message = '';
   }
 
@@ -21,6 +22,7 @@ export class LoginComponent {
       return false;
     }
 
+    this.router.navigate(['/Exchange']);
     return true;
   }
 }

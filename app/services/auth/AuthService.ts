@@ -1,10 +1,17 @@
 import {Injectable, provide} from '@angular/core';
+import {Observable} from 'rxjs/Observable';
 
 @Injectable()
 export class AuthService {
+  authorized:boolean;
+
+  constructor() {
+    this.authorized = false;
+  }
+
   login(user:string, password:string):boolean {
     if (user === 'username' && password === 'password') {
-      localStorage.setItem('username', user);
+      this.authorized = true;
       return true;
     }
 
@@ -12,15 +19,12 @@ export class AuthService {
   }
 
   logout():any {
-    localStorage.removeItem('username');
+    this.authorized = false;
   }
 
-  getUser():any {
-    return localStorage.getItem('username');
-  }
-
-  isAuthorized():boolean {
-    return this.getUser() !== null;
+  isAuthorized():Observable<boolean> {
+    //noinspection TypeScriptUnresolvedFunction
+    return Observable.of(this.authorized);
   }
 }
 
