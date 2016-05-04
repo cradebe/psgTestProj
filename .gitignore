@@ -4,6 +4,9 @@ node_modules
 # IDE directory
 .idea
 
+# Typings
+typings
+
 # Compiled files
 app/**/*.js
 app/**/*.js.map
