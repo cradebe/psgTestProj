@@ -4,6 +4,7 @@
   var map = {
     'app': 'app', // 'dist',
     'rxjs': 'node_modules/rxjs',
+    'moment': 'node_modules/moment/moment.js',
     'angular2-in-memory-web-api': 'node_modules/angular2-in-memory-web-api',
     '@angular': 'node_modules/@angular'
   };

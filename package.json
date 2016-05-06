@@ -10,7 +10,7 @@
     "tsc": "tsc",
     "tsc:w": "tsc -w",
     "typings": "typings",
-    "scss": "node-sass --include-path scss assets/styles/styles.scss assets/styles/styles.css",
+    "scss": "node-sass --precision 8 --include-path scss assets/styles/styles.scss assets/styles/styles.css",
     "scss:w": "nodemon -e scss -x \"npm run scss\""
   },
   "repository": {
@@ -32,6 +32,7 @@
     "angular2-in-memory-web-api": "0.0.7",
     "bootstrap-sass": "^3.3.6",
     "es6-shim": "^0.35.0",
+    "moment": "^2.13.0",
     "reflect-metadata": "^0.1.3",
     "rxjs": "5.0.0-beta.6",
     "systemjs": "0.19.27",
