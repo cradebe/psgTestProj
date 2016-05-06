@@ -27,7 +27,7 @@ import 'rxjs/Rx';
     component: LoginComponent
   },
   {
-    path: '/exchange',
+    path: '/exchange/...',
     name: 'Exchange',
     component: ExchangeComponent
   }

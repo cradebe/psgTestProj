@@ -1,0 +1,17 @@
+<div class="container">
+  <header class="clearfix">
+    <nav>
+      <ul class="nav nav-pills pull-right">
+        <li [class.active]="router.isRouteActive(router.generate(['./History']))">
+          <a [routerLink]="['./History']">
+            Historia
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <h3 class="text-muted">
+      Exchange App
+    </h3>
+  </header>
+  <router-outlet></router-outlet>
+</div>
