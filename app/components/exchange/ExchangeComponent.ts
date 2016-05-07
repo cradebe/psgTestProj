@@ -3,6 +3,7 @@ import {CanActivate, ComponentInstruction, RouteConfig, Router, ROUTER_DIRECTIVE
 import {AppInjector} from '../../services/injector/AppInjector';
 import {AuthService} from '../../services/auth/AuthService';
 import {HistoryComponent} from '../history/HistoryComponent';
+import {SummaryComponent} from '../summary/SummaryComponent';
 
 @Component({
   selector: 'exchange',
@@ -30,10 +31,15 @@ import {HistoryComponent} from '../history/HistoryComponent';
 )
 @RouteConfig([
   {
+    path: '/summary',
+    name: 'Summary',
+    component: SummaryComponent,
+    useAsDefault: true
+  },
+  {
     path: '/history',
     name: 'History',
-    component: HistoryComponent,
-    useAsDefault: true
+    component: HistoryComponent
   }
 ])
 export class ExchangeComponent {
