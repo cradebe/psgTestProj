@@ -35,7 +35,7 @@ export class Transaction {
     return `${(this._amount * this._rate).toFixed(2)} ${this._target}`;
   }
 
-  get date():Date {
+  get date():string {
     return moment(this._date).fromNow();
   }
 }
