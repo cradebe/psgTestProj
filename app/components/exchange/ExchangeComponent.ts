@@ -1,7 +1,8 @@
 import {Component, Injector} from '@angular/core';
-import {CanActivate, ComponentInstruction, RouteConfig, Router, ROUTER_DIRECTIVES} from '@angular/router-deprecated';
+import {CanActivate, OnActivate, ComponentInstruction, RouteConfig, Router, ROUTER_DIRECTIVES} from '@angular/router-deprecated';
 import {AppInjector} from '../../services/injector/AppInjector';
 import {AuthService} from '../../services/auth/AuthService';
+import {TransactionService} from '../../services/transaction/TransactionService';
 import {HistoryComponent} from '../history/HistoryComponent';
 import {SummaryComponent} from '../summary/SummaryComponent';
 
@@ -42,6 +43,17 @@ import {SummaryComponent} from '../summary/SummaryComponent';
     component: HistoryComponent
   }
 ])
-export class ExchangeComponent {
-  constructor(public router: Router) {}
+export class ExchangeComponent implements OnActivate {
+  constructor(public router:Router, public transactionService:TransactionService) {
+
+  }
+
+  routerOnActivate() {
+    return new Promise((resolve) => {
+      this.transactionService.getRates()
+        .subscribe(() => {
+          resolve(true);
+        });
+    });
+  }
 }

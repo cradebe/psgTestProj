@@ -1,0 +1,34 @@
+<form [ngFormModel]="form" (ngSubmit)="onSubmit(form)">
+  <div class="row">
+    <div class="col-md-3">
+      <div class="form-group">
+        <input class="form-control" type="number" [ngFormControl]="form.controls.amount">
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="form-group">
+        <select class="form-control" [ngFormControl]="form.controls.source">
+          <option *ngFor="let currency of currencies" [ngValue]="currency">
+            {{currency}}
+          </option>
+        </select>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="form-group">
+        <input class="form-control" type="number" [ngFormControl]="form.controls.result">
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="form-group">
+        <select class="form-control" [ngFormControl]="form.controls.target">
+          <option *ngFor="let currency of currencies" [ngValue]="currency">
+            {{currency}}
+          </option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <button class="btn btn-primary">Wymień</button>
+</form>
