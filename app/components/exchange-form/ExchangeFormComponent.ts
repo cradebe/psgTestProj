@@ -9,6 +9,7 @@ import {TransactionService} from '../../services/transaction/TransactionService'
 })
 export class ExchangeFormComponent implements OnInit {
   form:ControlGroup;
+  alert:string;
 
   constructor(
     fb:FormBuilder,
@@ -54,5 +55,18 @@ export class ExchangeFormComponent implements OnInit {
           (amount as Control).updateValue(response, {emitEvent: false});
         }
       });
+  }
+
+  onSubmit(form:any) {
+    if (!this.transactionService.account.hasEnoughMoney(form.controls['amount'].value, form.controls['source'].value)) {
+      this.alert = 'Nie posiadasz wystarczających środków';
+    }
+
+    this.transactionService.create(
+      form.controls['amount'].value,
+      form.controls['source'].value,
+      form.controls['result'].value,
+      form.controls['target'].value
+    );
   }
 }

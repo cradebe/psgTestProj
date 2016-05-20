@@ -1,5 +1,12 @@
 import {Component, Injector} from '@angular/core';
-import {CanActivate, OnActivate, ComponentInstruction, RouteConfig, Router, ROUTER_DIRECTIVES} from '@angular/router-deprecated';
+import {
+  CanActivate,
+  OnActivate,
+  ComponentInstruction,
+  RouteConfig,
+  Router,
+  ROUTER_DIRECTIVES
+} from '@angular/router-deprecated';
 import {AppInjector} from '../../services/injector/AppInjector';
 import {AuthService} from '../../services/auth/AuthService';
 import {TransactionService} from '../../services/transaction/TransactionService';
@@ -45,7 +52,7 @@ import {SummaryComponent} from '../summary/SummaryComponent';
 ])
 export class ExchangeComponent implements OnActivate {
   constructor(public router:Router, public transactionService:TransactionService) {
-
+    
   }
 
   routerOnActivate() {

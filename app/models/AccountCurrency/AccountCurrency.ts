@@ -11,6 +11,18 @@ export class AccountCurrency {
     this._amount = amount || 0;
   }
 
+  get amount():number {
+    return this._amount;
+  }
+
+  set amount(value:number) {
+    this._amount = value;
+  }
+
+  get currency():string {
+    return this._currency;
+  }
+
   get value():string {
     return `${this._amount} ${this._currency}`;
   }

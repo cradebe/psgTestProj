@@ -1,7 +1,7 @@
 import {Component} from '@angular/core';
 import {Transaction} from '../../models/Transaction/Transaction';
 import {TransactionComponent} from '../transaction/TransactionComponent';
-import * as moment from 'moment';
+import {TransactionService} from '../../services/transaction/TransactionService';
 
 @Component({
   selector: 'history',
@@ -9,8 +9,9 @@ import * as moment from 'moment';
   templateUrl: 'app/components/history/history.html'
 })
 export class HistoryComponent {
-  list:Transaction[] = [
-    new Transaction('EUR', 'USD', 100, 1.1427, moment().toDate()),
-    new Transaction('EUR', 'PLN', 300, 4.4198, moment().toDate())
-  ];
+  list:Transaction[];
+
+  constructor(private transactionService:TransactionService) {
+    this.list = transactionService.account.transactions;
+  }
 }

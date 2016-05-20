@@ -1,4 +1,7 @@
-<form [ngFormModel]="form" (ngSubmit)="onSubmit(form)">
+<form [ngFormModel]="form" (ngSubmit)="onSubmit(form)" novalidate>
+  <div class="alert alert-danger" *ngIf="alert">
+    {{alert}}
+  </div>
   <div class="row">
     <div class="col-md-3">
       <div class="form-group">

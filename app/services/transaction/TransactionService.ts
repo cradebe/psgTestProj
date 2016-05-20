@@ -1,13 +1,25 @@
 import {Inject, Injectable, provide} from '@angular/core';
 import {Http, Response} from '@angular/http';
 import {Observable} from 'rxjs/Observable';
+import {Account} from '../../models/Account/Account';
+import {AccountCurrency} from '../../models/AccountCurrency/AccountCurrency';
+import {Transaction} from '../../models/Transaction/Transaction';
+import * as moment from 'moment';
 
 @Injectable()
 export class TransactionService {
+  account:Account;
   rates:Object = {};
 
   constructor(public http:Http, @Inject('API_URL') private apiUrl:string) {
-
+    this.account = new Account(
+      [
+        new AccountCurrency({
+          amount: 1000,
+          currency: 'EUR'
+        })
+      ]
+    )
   }
 
   getRates(base = 'EUR') {
@@ -28,6 +40,22 @@ export class TransactionService {
     return this.getRates(source).map((response) => {
       return (amount * response[target]).toFixed(2);
     });
+  }
+
+  create(amount:number, source:string, result:number, target:string) {
+    this.account.addTransaction(
+      new Transaction(source, target, amount, this.rates[source][target], moment().toDate())
+    );
+
+    let sourceCurrency:AccountCurrency = this.account.currencies.find(x => x.currency === source);
+    let targetCurrency:AccountCurrency = this.account.currencies.find(x => x.currency === target);
+    
+    if (!targetCurrency) {
+      targetCurrency = this.account.addCurrency(new AccountCurrency({currency: target}));
+    }
+
+    sourceCurrency.amount -= Number(amount);
+    targetCurrency.amount += Number(result);
   }
 }
 
