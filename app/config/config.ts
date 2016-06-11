@@ -1,5 +1,13 @@
 import {provide} from '@angular/core';
 
+/**
+ *
+ * 7. DEPENDENCY INJECTION
+ *
+ *    - useValue
+ *
+ */
+
 const API_URL:string = 'http://api.fixer.io/';
 const CURRENCIES:string[] = [
   'CHF',

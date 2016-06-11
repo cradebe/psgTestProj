@@ -1,6 +1,18 @@
 import {Injectable, provide} from '@angular/core';
 import {Observable} from 'rxjs/Observable';
 
+/**
+ *
+ * 5. SERWISY
+ *
+ *    - @Injectable()
+ *
+ * 7. DEPENDENCY INJECTION
+ *
+ *    - useClass
+ *
+ */
+
 @Injectable()
 export class AuthService {
   authorized:boolean;

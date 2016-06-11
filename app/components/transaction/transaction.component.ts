@@ -2,6 +2,19 @@ import {Component, Input} from '@angular/core';
 import {Transaction} from '../../models/transaction/transaction.model';
 import {FromNowPipe} from '../../pipes/from-now/from-now.pipe';
 
+/**
+ *
+ * 3. Wbudowane dyrektywy
+ *
+ *    - @Input
+ *
+ * 4. Filtry
+ *
+ *    - parametr pipes
+ *    - korzstanie
+ *
+ */
+
 @Component({
   selector: 'transaction',
   pipes: [FromNowPipe],

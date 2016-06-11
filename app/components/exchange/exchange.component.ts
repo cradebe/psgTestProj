@@ -13,6 +13,15 @@ import {TransactionService} from '../../services/transaction/transaction.service
 import {HistoryComponent} from '../history/history.component';
 import {SummaryComponent} from '../summary/summary.component';
 
+/**
+ *
+ * 2. ROUTER
+ *
+ *    - CanActivate
+ *    - routerOnActivate
+ *
+ */
+
 @Component({
   selector: 'exchange',
   directives: [ROUTER_DIRECTIVES],

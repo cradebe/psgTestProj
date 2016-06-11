@@ -6,6 +6,14 @@ import {AccountCurrency} from '../../models/account-currency/account-currency.mo
 import {Transaction} from '../../models/transaction/transaction.model';
 import * as moment from 'moment';
 
+/**
+ *
+ * 5. SERWISY
+ *
+ *    - Http
+ *
+ */
+
 @Injectable()
 export class TransactionService {
   account:Account;

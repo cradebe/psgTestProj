@@ -13,6 +13,22 @@ import {TRANSACTION_PROVIDERS} from './services/transaction/transaction.service'
 
 import 'rxjs/Rx';
 
+/**
+ *
+ * 1. BUDOWA APLIKACJI
+ *
+ *    - Component
+ *    - bootstrap
+ *
+ * 2. ROUTER
+ *
+ * 7. DEPENDENCY INJECTION
+ *
+ *    - providery w Compnentach
+ *    - providery w bootstrap
+ *
+ */
+
 @Component({
   selector: 'app',
   directives: [ROUTER_DIRECTIVES],

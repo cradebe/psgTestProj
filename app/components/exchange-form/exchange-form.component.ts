@@ -2,6 +2,16 @@ import {Component, Inject, OnInit} from '@angular/core';
 import {Control, FORM_DIRECTIVES, FormBuilder, ControlGroup, Validators} from '@angular/common';
 import {TransactionService} from '../../services/transaction/transaction.service';
 
+/**
+ *
+ * 6. FORMUALRZE
+ *
+ *    - FormBuilder
+ *    - Validators
+ *    - Observable w formularzach
+ *
+ */
+
 @Component({
   selector: 'exchange-form',
   directives: [FORM_DIRECTIVES],
