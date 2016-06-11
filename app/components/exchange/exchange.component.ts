@@ -7,11 +7,11 @@ import {
   Router,
   ROUTER_DIRECTIVES
 } from '@angular/router-deprecated';
-import {AppInjector} from '../../services/injector/AppInjector';
-import {AuthService} from '../../services/auth/AuthService';
-import {TransactionService} from '../../services/transaction/TransactionService';
-import {HistoryComponent} from '../history/HistoryComponent';
-import {SummaryComponent} from '../summary/SummaryComponent';
+import {AppInjector} from '../../services/injector/app.injector';
+import {AuthService} from '../../services/auth/auth.service';
+import {TransactionService} from '../../services/transaction/transaction.service';
+import {HistoryComponent} from '../history/history.component';
+import {SummaryComponent} from '../summary/summary.component';
 
 @Component({
   selector: 'exchange',
@@ -19,7 +19,7 @@ import {SummaryComponent} from '../summary/SummaryComponent';
   templateUrl: 'app/components/exchange/exchange.html'
 })
 @CanActivate(
-  (next:ComponentInstruction, prev:ComponentInstruction) => {
+  () => {
     let injector:Injector = AppInjector();
     let authService:AuthService = injector.get(AuthService);
     let router:Router = injector.get(Router);

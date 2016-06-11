@@ -1,6 +1,6 @@
 import {Component, Inject, OnInit} from '@angular/core';
-import {Control, FORM_DIRECTIVES, FormBuilder, ControlGroup} from '@angular/common';
-import {TransactionService} from '../../services/transaction/TransactionService';
+import {Control, FORM_DIRECTIVES, FormBuilder, ControlGroup, Validators} from '@angular/common';
+import {TransactionService} from '../../services/transaction/transaction.service';
 
 @Component({
   selector: 'exchange-form',
@@ -17,7 +17,7 @@ export class ExchangeFormComponent implements OnInit {
     private transactionService:TransactionService
   ) {
     this.form = fb.group({
-      amount: 0,
+      amount: [0, Validators.required],
       result: 0,
       source: 'EUR',
       target: 'PLN'

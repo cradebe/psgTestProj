@@ -1,7 +1,8 @@
 <h4>Dostępne środki</h4>
 <div class="list-group">
-  <div class="list-group-item" *ngFor="let currency of account.currencies">
-    {{currency.value}}
+  <div class="list-group-item" *ngFor="let account of account.currencies">
+    {{account.amount | number: 2}}
+    {{account.currency}}
   </div>
 </div>
 

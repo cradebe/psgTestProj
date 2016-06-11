@@ -1,7 +1,7 @@
 import {Component} from '@angular/core';
 import {FORM_DIRECTIVES} from '@angular/common';
 import {Router} from '@angular/router-deprecated';
-import {AuthService} from '../../services/auth/AuthService';
+import {AuthService} from '../../services/auth/auth.service';
 
 @Component({
   selector: 'login',

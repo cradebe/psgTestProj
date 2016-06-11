@@ -1,13 +1,15 @@
 import {Component, Input} from '@angular/core';
-import {Transaction} from '../../models/Transaction/Transaction';
+import {Transaction} from '../../models/transaction/transaction.model';
+import {FromNowPipe} from '../../pipes/from-now/from-now.pipe';
 
 @Component({
   selector: 'transaction',
+  pipes: [FromNowPipe],
   template: `
-    {{transaction.date}}
+    {{transaction.date | fromNow}}
     <div class="panel panel-default text-right">
       <div class="panel-heading">
-        {{transaction.amount}}
+        {{transaction.amount}} {{transaction.source}}
       </div>
       <div class="panel-body">
         <div class="row">
@@ -15,20 +17,15 @@ import {Transaction} from '../../models/Transaction/Transaction';
             1 {{transaction.source}}
           </div>
           <div class="col-xs-6">
-            {{transaction.rate}}
+            {{transaction.rate}} {{transaction.target}}
           </div>
         </div>
       </div>
       <div class="panel-footer">
-        {{transaction.result}}
+        {{transaction.result()}} {{transaction.target}}
       </div>
     </div>
-  `,
-  styles: [
-    `
-      
-    `
-  ]
+  `
 })
 export class TransactionComponent {
   @Input()

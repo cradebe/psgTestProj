@@ -1,7 +1,7 @@
 import {Component} from '@angular/core';
-import {Transaction} from '../../models/Transaction/Transaction';
-import {TransactionComponent} from '../transaction/TransactionComponent';
-import {TransactionService} from '../../services/transaction/TransactionService';
+import {Transaction} from '../../models/transaction/transaction.model';
+import {TransactionComponent} from '../transaction/transaction.component';
+import {TransactionService} from '../../services/transaction/transaction.service';
 
 @Component({
   selector: 'history',

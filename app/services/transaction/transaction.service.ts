@@ -1,9 +1,9 @@
 import {Inject, Injectable, provide} from '@angular/core';
 import {Http, Response} from '@angular/http';
 import {Observable} from 'rxjs/Observable';
-import {Account} from '../../models/Account/Account';
-import {AccountCurrency} from '../../models/AccountCurrency/AccountCurrency';
-import {Transaction} from '../../models/Transaction/Transaction';
+import {Account} from '../../models/account/account.model';
+import {AccountCurrency} from '../../models/account-currency/account-currency.model';
+import {Transaction} from '../../models/transaction/transaction.model';
 import * as moment from 'moment';
 
 @Injectable()
